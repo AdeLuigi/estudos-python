@@ -5,17 +5,19 @@ def submergeSubmarine(arg):
     count = 0
     forward = 0
     vertical = 0
+    aim = 0
     while(count < len(arrayWithSplit)):
         actionAndQuantity = arrayWithSplit[count].split()
         if(actionAndQuantity[0] == "forward"):
             forward += int(actionAndQuantity[1])
+            vertical += aim*int(actionAndQuantity[1])
         elif(actionAndQuantity[0] == "down"):
-            vertical += int(actionAndQuantity[1])
+            aim += int(actionAndQuantity[1])
         elif(actionAndQuantity[0] == "up"):
-            vertical -= int(actionAndQuantity[1])
+            aim -= int(actionAndQuantity[1])
         count += 1
     print("Posição horizontal:", forward)
-    print("Profundidade:",vertical)
-    print("Multiplicação",forward*vertical)
+    print("Profundidade:", vertical)
+    print("Multiplicação", forward*vertical)
 
 submergeSubmarine(strintInput)
