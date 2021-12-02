@@ -19,7 +19,17 @@ def simpleArraySum(ar):
     while count < len(ar):
         somaArrays = somaArrays+ar[count]
         count = count+1
-        print(somaArrays)
+    return somaArrays
 
-arrayzao = [1,2,3,4,5]
-simpleArraySum(arrayzao)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input().strip())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = simpleArraySum(ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
